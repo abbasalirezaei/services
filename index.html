@@ -1,394 +1,641 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>My Services | Abbasali Rezaei</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:#f6f7fb;
-color:#222;
-}
-
-header{
-background:linear-gradient(135deg,#6f42c1,#9147ff);
-color:white;
-padding:70px 20px;
-text-align:center;
-}
-
-header h1{
-font-size:45px;
-margin-bottom:15px;
-}
-
-header p{
-font-size:18px;
-opacity:.9;
-}
-
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
-padding:60px 0;
-}
-
-.section-title{
-text-align:center;
-font-size:34px;
-margin-bottom:50px;
-color:#6f42c1;
-}
-
-.cards{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:35px;
-
-}
-
-.card{
-
-background:white;
-border-radius:18px;
-padding:35px;
-box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-transition:.35s;
-
-}
-
-.card:hover{
-
-transform:translateY(-10px);
-
-}
-
-.icon{
-
-font-size:55px;
-margin-bottom:20px;
-
-}
-
-.card h2{
-
-margin-bottom:15px;
-
-}
-
-.card p{
-
-line-height:1.8;
-color:#666;
-margin-bottom:25px;
-
-}
-
-button{
-
-background:#7b2cff;
-border:none;
-padding:13px 25px;
-color:white;
-border-radius:8px;
-cursor:pointer;
-font-size:15px;
-transition:.3s;
-
-}
-
-button:hover{
-
-background:#6320d7;
-
-}
-
-.details{
-
-display:none;
-margin-top:70px;
-animation:fade .4s;
-
-}
-
-.details.active{
-
-display:block;
-
-}
-
-@keyframes fade{
-
-from{
-opacity:0;
-transform:translateY(20px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-
-}
-
-.detail-box{
-
-background:white;
-padding:45px;
-border-radius:18px;
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-
-}
-
-.detail-box h2{
-
-color:#6f42c1;
-margin-bottom:20px;
-
-}
-
-.detail-box p{
-
-line-height:2;
-margin-bottom:25px;
-
-}
-
-.detail-box ul{
-
-margin-left:20px;
-line-height:2;
-
-}
-
-.back{
-
-margin-top:35px;
-
-}
-
-footer{
-
-margin-top:80px;
-padding:35px;
-text-align:center;
-background:#fff;
-color:#888;
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services · Abbasali Rezaei</title>
+    <!-- Font & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F8F9FC;
+            color: #111827;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ----- HERO ----- */
+        .hero {
+            padding: 5rem 0 4rem;
+            text-align: center;
+        }
+
+        .hero__badge {
+            display: inline-block;
+            background: rgba(124, 58, 237, 0.08);
+            color: #7C3AED;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            padding: 0.4rem 1rem;
+            border-radius: 40px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            color: #111827;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 80%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero__sub {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #6B7280;
+            max-width: 540px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero__actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.75rem 2rem;
+            border-radius: 60px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .btn--primary {
+            background: #7C3AED;
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.25);
+        }
+        .btn--primary:hover {
+            background: #6D28D9;
+            transform: scale(1.02);
+            box-shadow: 0 12px 28px rgba(124, 58, 237, 0.35);
+        }
+
+        .btn--secondary {
+            background: transparent;
+            color: #111827;
+            border: 1px solid #E5E7EB;
+        }
+        .btn--secondary:hover {
+            background: rgba(124, 58, 237, 0.05);
+            border-color: #7C3AED;
+            transform: scale(1.02);
+        }
+
+        .btn--ghost {
+            background: transparent;
+            color: #7C3AED;
+            padding: 0.5rem 0;
+            font-weight: 500;
+            border-radius: 0;
+            border-bottom: 1.5px solid transparent;
+        }
+        .btn--ghost:hover {
+            border-bottom-color: #7C3AED;
+            transform: none;
+        }
+
+        /* ----- SERVICES SECTION ----- */
+        .services {
+            padding: 2rem 0 4rem;
+        }
+
+        .services__header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .services__header h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #111827;
+        }
+        .services__header p {
+            color: #6B7280;
+            font-weight: 400;
+            margin-top: 0.25rem;
+        }
+
+        .services__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: #FFFFFF;
+            border-radius: 28px;
+            padding: 2rem 1.8rem 1.8rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(229, 231, 235, 0.5);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: default;
+            backdrop-filter: blur(2px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06), 0 8px 20px rgba(124, 58, 237, 0.06);
+            border-color: #d5c4ff;
+        }
+
+        .service-card__icon {
+            font-size: 2rem;
+            color: #7C3AED;
+            margin-bottom: 1rem;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(124, 58, 237, 0.07);
+            border-radius: 16px;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #111827;
+        }
+
+        .service-card p {
+            color: #6B7280;
+            font-size: 0.95rem;
+            font-weight: 400;
+            line-height: 1.5;
+            margin-bottom: 1.25rem;
+            flex: 1;
+        }
+
+        .service-card .btn--ghost {
+            align-self: flex-start;
+            margin-top: 0.25rem;
+            font-size: 0.9rem;
+        }
+
+        /* Accordion detail panel */
+        .service-detail {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, margin 0.3s ease;
+            opacity: 0;
+            margin-top: 0;
+            border-top: 1px solid transparent;
+        }
+
+        .service-detail.open {
+            max-height: 1200px; /* enough for content */
+            opacity: 1;
+            margin-top: 1.5rem;
+            border-top-color: #E5E7EB;
+        }
+
+        .service-detail__inner {
+            background: #F8F9FC;
+            padding: 1.8rem 2rem;
+            border-radius: 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem 2.5rem;
+            border: 1px solid rgba(229, 231, 235, 0.6);
+        }
+
+        .service-detail__inner h4 {
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            color: #6B7280;
+            margin-bottom: 0.75rem;
+        }
+
+        .service-detail__inner ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-detail__inner li {
+            padding: 0.3rem 0;
+            font-size: 0.95rem;
+            color: #1F2937;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .service-detail__inner li i {
+            color: #7C3AED;
+            width: 1.1rem;
+            font-size: 0.7rem;
+        }
+
+        .detail-col {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .detail-cta {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 0.75rem;
+        }
+
+        .detail-cta .btn {
+            background: #7C3AED;
+            color: white;
+            padding: 0.6rem 2.2rem;
+            border-radius: 60px;
+            font-weight: 500;
+            box-shadow: 0 6px 18px rgba(124, 58, 237, 0.2);
+        }
+        .detail-cta .btn:hover {
+            background: #6D28D9;
+            transform: scale(1.02);
+        }
+
+        /* ----- CONTACT ----- */
+        .contact {
+            background: #FFFFFF;
+            border-radius: 40px;
+            padding: 3.5rem 2.5rem;
+            margin: 3rem 0 2rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(229, 231, 235, 0.4);
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #111827;
+        }
+        .contact p {
+            color: #6B7280;
+            font-size: 1.1rem;
+            margin: 0.5rem 0 2rem;
+        }
+
+        .contact__links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .contact__links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: #F8F9FC;
+            padding: 0.6rem 1.6rem;
+            border-radius: 60px;
+            font-weight: 500;
+            color: #111827;
+            text-decoration: none;
+            border: 1px solid #E5E7EB;
+            transition: all 0.15s ease;
+        }
+
+        .contact__links a:hover {
+            background: rgba(124, 58, 237, 0.06);
+            border-color: #7C3AED;
+            transform: scale(1.02);
+        }
+
+        .contact__links a i {
+            color: #7C3AED;
+        }
+
+        /* ----- FOOTER ----- */
+        footer {
+            text-align: center;
+            padding: 2.5rem 0 2rem;
+            color: #9CA3AF;
+            font-size: 0.9rem;
+            border-top: 1px solid #E5E7EB;
+            margin-top: 1rem;
+        }
+
+        footer span {
+            color: #7C3AED;
+        }
+
+        /* ----- UTILITY & RESPONSIVE ----- */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-1 { animation-delay: 0.05s; }
+        .delay-2 { animation-delay: 0.1s; }
+        .delay-3 { animation-delay: 0.15s; }
+        .delay-4 { animation-delay: 0.2s; }
+
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            .hero__sub {
+                font-size: 1rem;
+            }
+            .service-detail__inner {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+                gap: 1rem;
+            }
+            .contact {
+                padding: 2rem 1.2rem;
+            }
+            .services__grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            .hero {
+                padding: 3rem 0 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-
-<h1>My Professional Services</h1>
-
-<p>IT • CCTV • Mathematics</p>
-
-</header>
-
-<div class="container">
-
-<h2 class="section-title">Services</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<div class="icon">📹</div>
-
-<h2>CCTV Installation</h2>
-
-<p>
-
-Professional installation and maintenance of IP & Analog CCTV systems for homes, offices, and industrial environments.
-
-</p>
-
-<button onclick="showDetail('cctv')">
-
-View Details
-
-</button>
-
-</div>
-
-<div class="card">
-
-<div class="icon">📚</div>
-
-<h2>Private Mathematics Tutoring</h2>
-
-<p>
-
-Online and in-person mathematics classes for school, university, engineering students, and exam preparation.
-
-</p>
-
-<button onclick="showDetail('math')">
-
-View Details
-
-</button>
-
-</div>
-
-</div>
-
-
-
-<div id="cctv" class="details">
-
-<div class="detail-box">
-
-<h2>📹 CCTV Installation & Maintenance</h2>
-
-<p>
-
-I provide professional CCTV solutions tailored to homes, businesses, and industrial facilities.
-
-</p>
-
-<ul>
-
-<li>IP Camera Installation</li>
-
-<li>Analog Camera Installation</li>
-
-<li>DVR / NVR Configuration</li>
-
-<li>Remote Viewing Setup</li>
-
-<li>Network Configuration</li>
-
-<li>Fiber Optic Connectivity</li>
-
-<li>Troubleshooting & Maintenance</li>
-
-<li>System Upgrade</li>
-
-</ul>
-
-<button class="back" onclick="hideDetails()">
-
-← Back to Services
-
-</button>
-
-</div>
-
-</div>
-
-
-
-<div id="math" class="details">
-
-<div class="detail-box">
-
-<h2>📚 Private Mathematics Tutoring</h2>
-
-<p>
-
-Helping students understand mathematics through simple explanations and problem-solving techniques.
-
-</p>
-
-<ul>
-
-<li>Elementary Mathematics</li>
-
-<li>High School Mathematics</li>
-
-<li>Calculus</li>
-
-<li>Linear Algebra</li>
-
-<li>Engineering Mathematics</li>
-
-<li>Discrete Mathematics</li>
-
-<li>Online Classes (Zoom / Google Meet)</li>
-
-<li>Homework & Exam Preparation</li>
-
-</ul>
-
-<button class="back" onclick="hideDetails()">
-
-← Back to Services
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-<footer>
-
-© 2026 Abbasali Rezaei | All Rights Reserved
-
-</footer>
-
-<script>
-
-function showDetail(id){
-
-document.querySelectorAll('.details').forEach(x=>{
-
-x.classList.remove('active');
-
-});
-
-document.getElementById(id).classList.add('active');
-
-document.getElementById(id).scrollIntoView({
-
-behavior:'smooth'
-
-});
-
-}
-
-function hideDetails(){
-
-document.querySelectorAll('.details').forEach(x=>{
-
-x.classList.remove('active');
-
-});
-
-window.scrollTo({
-
-top:0,
-
-behavior:'smooth'
-
-});
-
-}
-
-</script>
+    <main class="container">
+
+        <!-- HERO -->
+        <section class="hero fade-up">
+            <div class="hero__badge">ICT Engineer · Backend · Network</div>
+            <h1>Professional <span>Services</span></h1>
+            <p class="hero__sub">Helping businesses and students with technology, engineering, and education.</p>
+            <div class="hero__actions">
+                <a href="#services" class="btn btn--primary"><i class="fas fa-arrow-right" style="font-size:0.8rem;"></i> Explore Services</a>
+                <a href="#contact" class="btn btn--secondary">Contact Me</a>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="services" class="services">
+            <div class="services__header fade-up delay-1">
+                <h2>What I deliver</h2>
+                <p>Tailored solutions for networks, code, and minds.</p>
+            </div>
+
+            <div class="services__grid">
+
+                <!-- CARD 1: IT & Network -->
+                <div class="service-card fade-up delay-1">
+                    <div class="service-card__icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>IT & Network Solutions</h3>
+                    <p>Enterprise networking, Windows Server, virtualization, and robust infrastructure for demanding environments.</p>
+                    <button class="btn btn--ghost service-toggle" data-target="detail1"><i class="fas fa-plus-circle" style="margin-right:6px;"></i> Learn More</button>
+                    <div id="detail1" class="service-detail">
+                        <div class="service-detail__inner">
+                            <div class="detail-col">
+                                <h4>Overview</h4>
+                                <p style="font-size:0.95rem; color:#374151;">Design and manage LAN/WAN, Cisco &amp; MikroTik, Active Directory, and Hyper‑V virtualization for reliable operations.</p>
+                                <h4 style="margin-top:0.5rem;">Technologies</h4>
+                                <ul><li><i class="fas fa-circle"></i> Cisco · MikroTik</li><li><i class="fas fa-circle"></i> Windows Server · AD</li><li><i class="fas fa-circle"></i> Hyper‑V · Fibre</li></ul>
+                            </div>
+                            <div class="detail-col">
+                                <h4>Features & Benefits</h4>
+                                <ul><li><i class="fas fa-check"></i> Reliable infrastructure</li><li><i class="fas fa-check"></i> Proactive troubleshooting</li><li><i class="fas fa-check"></i> Scalable design</li></ul>
+                                <h4 style="margin-top:0.5rem;">Who benefits</h4>
+                                <ul><li><i class="fas fa-user"></i> SMBs, industrial sites</li><li><i class="fas fa-user"></i> IT teams needing support</li></ul>
+                            </div>
+                            <div class="detail-cta">
+                                <a href="#contact" class="btn">Request this service</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2: CCTV -->
+                <div class="service-card fade-up delay-2">
+                    <div class="service-card__icon"><i class="fas fa-video"></i></div>
+                    <h3>CCTV &amp; Surveillance</h3>
+                    <p>IP and analog cameras, DVR/NVR, remote monitoring, and fiber‑optic connectivity for security.</p>
+                    <button class="btn btn--ghost service-toggle" data-target="detail2"><i class="fas fa-plus-circle" style="margin-right:6px;"></i> Learn More</button>
+                    <div id="detail2" class="service-detail">
+                        <div class="service-detail__inner">
+                            <div class="detail-col">
+                                <h4>Overview</h4>
+                                <p style="font-size:0.95rem; color:#374151;">End‑to‑end CCTV installation: IP/analog cameras, DVR/NVR setup, remote viewing, and maintenance.</p>
+                                <h4 style="margin-top:0.5rem;">Features</h4>
+                                <ul><li><i class="fas fa-check"></i> IP &amp; Analog Cameras</li><li><i class="fas fa-check"></i> DVR / NVR Configuration</li><li><i class="fas fa-check"></i> Remote Viewing · Maintenance</li></ul>
+                            </div>
+                            <div class="detail-col">
+                                <h4>Benefits</h4>
+                                <ul><li><i class="fas fa-check"></i> Professional &amp; reliable</li><li><i class="fas fa-check"></i> Affordable packages</li><li><i class="fas fa-check"></i> Long‑term support</li></ul>
+                                <h4 style="margin-top:0.5rem;">Who it’s for</h4>
+                                <ul><li><i class="fas fa-home"></i> Homes &amp; offices</li><li><i class="fas fa-industry"></i> Industrial facilities</li></ul>
+                            </div>
+                            <div class="detail-cta">
+                                <a href="#contact" class="btn">Request this service</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3: Mathematics Tutoring -->
+                <div class="service-card fade-up delay-3">
+                    <div class="service-card__icon"><i class="fas fa-calculator"></i></div>
+                    <h3>Mathematics Tutoring</h3>
+                    <p>Private tutoring for school, university, and engineering students. Calculus, algebra, exam prep.</p>
+                    <button class="btn btn--ghost service-toggle" data-target="detail3"><i class="fas fa-plus-circle" style="margin-right:6px;"></i> Learn More</button>
+                    <div id="detail3" class="service-detail">
+                        <div class="service-detail__inner">
+                            <div class="detail-col">
+                                <h4>Overview</h4>
+                                <p style="font-size:0.95rem; color:#374151;">Personalised mathematics coaching for elementary to university level, including calculus, linear algebra, and engineering math.</p>
+                                <h4 style="margin-top:0.5rem;">Topics</h4>
+                                <ul><li><i class="fas fa-check"></i> Calculus · Linear Algebra</li><li><i class="fas fa-check"></i> Engineering Mathematics</li><li><i class="fas fa-check"></i> Exam Preparation</li></ul>
+                            </div>
+                            <div class="detail-col">
+                                <h4>Format</h4>
+                                <ul><li><i class="fas fa-check"></i> Online (Zoom/Meet)</li><li><i class="fas fa-check"></i> In‑person</li><li><i class="fas fa-check"></i> Homework support</li></ul>
+                                <h4 style="margin-top:0.5rem;">Who benefits</h4>
+                                <ul><li><i class="fas fa-user-graduate"></i> School &amp; university students</li><li><i class="fas fa-user-tie"></i> Engineering candidates</li></ul>
+                            </div>
+                            <div class="detail-cta">
+                                <a href="#contact" class="btn">Request this service</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 4: Backend Development -->
+                <div class="service-card fade-up delay-2">
+                    <div class="service-card__icon"><i class="fas fa-code"></i></div>
+                    <h3>Backend Development</h3>
+                    <p>Python, FastAPI, REST APIs, database design, and automation for robust web applications.</p>
+                    <button class="btn btn--ghost service-toggle" data-target="detail4"><i class="fas fa-plus-circle" style="margin-right:6px;"></i> Learn More</button>
+                    <div id="detail4" class="service-detail">
+                        <div class="service-detail__inner">
+                            <div class="detail-col">
+                                <h4>Overview</h4>
+                                <p style="font-size:0.95rem; color:#374151;">Build scalable backends with Python, FastAPI, and clean database architecture, plus automation scripts.</p>
+                                <h4 style="margin-top:0.5rem;">Technologies</h4>
+                                <ul><li><i class="fas fa-check"></i> Python · FastAPI</li><li><i class="fas fa-check"></i> REST APIs · SQL</li><li><i class="fas fa-check"></i> Automation</li></ul>
+                            </div>
+                            <div class="detail-col">
+                                <h4>Benefits</h4>
+                                <ul><li><i class="fas fa-check"></i> High‑performance APIs</li><li><i class="fas fa-check"></i> Clean maintainable code</li><li><i class="fas fa-check"></i> Scalable design</li></ul>
+                                <h4 style="margin-top:0.5rem;">Who it’s for</h4>
+                                <ul><li><i class="fas fa-building"></i> Startups &amp; enterprises</li><li><i class="fas fa-user-cog"></i> Tech teams</li></ul>
+                            </div>
+                            <div class="detail-cta">
+                                <a href="#contact" class="btn">Request this service</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 5: Technical Consulting -->
+                <div class="service-card fade-up delay-3">
+                    <div class="service-card__icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Technical Consulting</h3>
+                    <p>IT consulting, infrastructure planning, digital transformation, and training for teams.</p>
+                    <button class="btn btn--ghost service-toggle" data-target="detail5"><i class="fas fa-plus-circle" style="margin-right:6px;"></i> Learn More</button>
+                    <div id="detail5" class="service-detail">
+                        <div class="service-detail__inner">
+                            <div class="detail-col">
+                                <h4>Overview</h4>
+                                <p style="font-size:0.95rem; color:#374151;">Strategic IT consulting to align technology with business goals, plan infrastructure, and drive digital transformation.</p>
+                                <h4 style="margin-top:0.5rem;">Services</h4>
+                                <ul><li><i class="fas fa-check"></i> IT Strategy · Roadmaps</li><li><i class="fas fa-check"></i> Infrastructure Planning</li><li><i class="fas fa-check"></i> Digital Transformation</li></ul>
+                            </div>
+                            <div class="detail-col">
+                                <h4>Benefits</h4>
+                                <ul><li><i class="fas fa-check"></i> Clear technology roadmap</li><li><i class="fas fa-check"></i> Cost‑efficient planning</li><li><i class="fas fa-check"></i> Training &amp; workshops</li></ul>
+                                <h4 style="margin-top:0.5rem;">Who it’s for</h4>
+                                <ul><li><i class="fas fa-building"></i> SMEs &amp; enterprises</li><li><i class="fas fa-users"></i> Growing teams</li></ul>
+                            </div>
+                            <div class="detail-cta">
+                                <a href="#contact" class="btn">Request this service</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="contact fade-up delay-4">
+            <h2>Need a custom solution?</h2>
+            <p>Let's work together.</p>
+            <div class="contact__links">
+                <a href="mailto:abbasali@rezaeiabbas.ir"><i class="fas fa-envelope"></i> Email</a>
+                <a href="#" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2026 <span>Abbasali Rezaei</span> · ICT Engineer</p>
+        </footer>
+
+    </main>
+
+    <script>
+        (function() {
+            // Accordion logic: only one open at a time
+            const toggles = document.querySelectorAll('.service-toggle');
+            const details = document.querySelectorAll('.service-detail');
+
+            function closeAll() {
+                details.forEach(d => {
+                    d.classList.remove('open');
+                });
+                toggles.forEach(btn => {
+                    btn.innerHTML = '<i class="fas fa-plus-circle" style="margin-right:6px;"></i> Learn More';
+                });
+            }
+
+            toggles.forEach((btn, index) => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const targetId = this.getAttribute('data-target');
+                    const targetDetail = document.getElementById(targetId);
+                    if (!targetDetail) return;
+
+                    const isOpen = targetDetail.classList.contains('open');
+
+                    // close all
+                    closeAll();
+
+                    if (!isOpen) {
+                        targetDetail.classList.add('open');
+                        this.innerHTML = '<i class="fas fa-minus-circle" style="margin-right:6px;"></i> Close';
+                    }
+                });
+            });
+
+            // close on outside click (optional but nice)
+            document.addEventListener('click', function(e) {
+                const isToggle = e.target.closest('.service-toggle');
+                const isDetail = e.target.closest('.service-detail');
+                if (!isToggle && !isDetail) {
+                    closeAll();
+                }
+            });
+
+        })();
+    </script>
 
 </body>
 </html>

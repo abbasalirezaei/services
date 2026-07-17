@@ -1,53 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Test Page</title>
-    <style>
-        /* Simple styling to make it look nice */
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            text-align: center;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        h1 {
-            color: #2c3e50;
-        }
-        .success-box {
-            background-color: white;
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border-left: 5px solid #28a745;
-        }
-        .emoji-big {
-            font-size: 48px;
-        }
-        .footer {
-            margin-top: 30px;
-            font-size: 14px;
-            color: #777;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Services | Abbasali Rezaei</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f6f7fb;
+color:#222;
+}
+
+header{
+background:linear-gradient(135deg,#6f42c1,#9147ff);
+color:white;
+padding:70px 20px;
+text-align:center;
+}
+
+header h1{
+font-size:45px;
+margin-bottom:15px;
+}
+
+header p{
+font-size:18px;
+opacity:.9;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+padding:60px 0;
+}
+
+.section-title{
+text-align:center;
+font-size:34px;
+margin-bottom:50px;
+color:#6f42c1;
+}
+
+.cards{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
+
+}
+
+.card{
+
+background:white;
+border-radius:18px;
+padding:35px;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+transition:.35s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.icon{
+
+font-size:55px;
+margin-bottom:20px;
+
+}
+
+.card h2{
+
+margin-bottom:15px;
+
+}
+
+.card p{
+
+line-height:1.8;
+color:#666;
+margin-bottom:25px;
+
+}
+
+button{
+
+background:#7b2cff;
+border:none;
+padding:13px 25px;
+color:white;
+border-radius:8px;
+cursor:pointer;
+font-size:15px;
+transition:.3s;
+
+}
+
+button:hover{
+
+background:#6320d7;
+
+}
+
+.details{
+
+display:none;
+margin-top:70px;
+animation:fade .4s;
+
+}
+
+.details.active{
+
+display:block;
+
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+.detail-box{
+
+background:white;
+padding:45px;
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.detail-box h2{
+
+color:#6f42c1;
+margin-bottom:20px;
+
+}
+
+.detail-box p{
+
+line-height:2;
+margin-bottom:25px;
+
+}
+
+.detail-box ul{
+
+margin-left:20px;
+line-height:2;
+
+}
+
+.back{
+
+margin-top:35px;
+
+}
+
+footer{
+
+margin-top:80px;
+padding:35px;
+text-align:center;
+background:#fff;
+color:#888;
+
+}
+
+</style>
+
 </head>
 <body>
-    <div class="success-box">
-        <p class="emoji-big">🚀</p>
-        <h1>It's Working Abbas!</h1>
-        <p>Your GitHub Pages site is successfully deployed.</p>
-        <p>This is a test page for:</p>
-        <code style="background: #eee; padding: 4px 8px; border-radius: 4px;">
-            https://abbasalirezaei.github.io/your-repo-name
-        </code>
-        <p style="margin-top: 20px;">🎉 You can now replace this file with your own website content.</p>
-    </div>
-    <div class="footer">
-        Created with ❤️ using GitHub Pages
-    </div>
+
+<header>
+
+<h1>My Professional Services</h1>
+
+<p>IT • CCTV • Mathematics</p>
+
+</header>
+
+<div class="container">
+
+<h2 class="section-title">Services</h2>
+
+<div class="cards">
+
+<div class="card">
+
+<div class="icon">📹</div>
+
+<h2>CCTV Installation</h2>
+
+<p>
+
+Professional installation and maintenance of IP & Analog CCTV systems for homes, offices, and industrial environments.
+
+</p>
+
+<button onclick="showDetail('cctv')">
+
+View Details
+
+</button>
+
+</div>
+
+<div class="card">
+
+<div class="icon">📚</div>
+
+<h2>Private Mathematics Tutoring</h2>
+
+<p>
+
+Online and in-person mathematics classes for school, university, engineering students, and exam preparation.
+
+</p>
+
+<button onclick="showDetail('math')">
+
+View Details
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<div id="cctv" class="details">
+
+<div class="detail-box">
+
+<h2>📹 CCTV Installation & Maintenance</h2>
+
+<p>
+
+I provide professional CCTV solutions tailored to homes, businesses, and industrial facilities.
+
+</p>
+
+<ul>
+
+<li>IP Camera Installation</li>
+
+<li>Analog Camera Installation</li>
+
+<li>DVR / NVR Configuration</li>
+
+<li>Remote Viewing Setup</li>
+
+<li>Network Configuration</li>
+
+<li>Fiber Optic Connectivity</li>
+
+<li>Troubleshooting & Maintenance</li>
+
+<li>System Upgrade</li>
+
+</ul>
+
+<button class="back" onclick="hideDetails()">
+
+← Back to Services
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<div id="math" class="details">
+
+<div class="detail-box">
+
+<h2>📚 Private Mathematics Tutoring</h2>
+
+<p>
+
+Helping students understand mathematics through simple explanations and problem-solving techniques.
+
+</p>
+
+<ul>
+
+<li>Elementary Mathematics</li>
+
+<li>High School Mathematics</li>
+
+<li>Calculus</li>
+
+<li>Linear Algebra</li>
+
+<li>Engineering Mathematics</li>
+
+<li>Discrete Mathematics</li>
+
+<li>Online Classes (Zoom / Google Meet)</li>
+
+<li>Homework & Exam Preparation</li>
+
+</ul>
+
+<button class="back" onclick="hideDetails()">
+
+← Back to Services
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+© 2026 Abbasali Rezaei | All Rights Reserved
+
+</footer>
+
+<script>
+
+function showDetail(id){
+
+document.querySelectorAll('.details').forEach(x=>{
+
+x.classList.remove('active');
+
+});
+
+document.getElementById(id).classList.add('active');
+
+document.getElementById(id).scrollIntoView({
+
+behavior:'smooth'
+
+});
+
+}
+
+function hideDetails(){
+
+document.querySelectorAll('.details').forEach(x=>{
+
+x.classList.remove('active');
+
+});
+
+window.scrollTo({
+
+top:0,
+
+behavior:'smooth'
+
+});
+
+}
+
+</script>
+
 </body>
 </html>
